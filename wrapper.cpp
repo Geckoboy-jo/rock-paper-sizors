@@ -6,7 +6,7 @@ void wrapper::runAPP()
 {
     bool done =false;
     srand(time(0));
-    while(done!=false)
+    while(done==false)
     {
         cout<<"==============================="<<endl;
         cout<<"Please type rock, paper, or scissors to play!"<<endl;
@@ -21,10 +21,26 @@ void wrapper::runAPP()
         else if(randomNum==3) computerChoice="scissors";
         cout<<"The computer chose "<<computerChoice<<endl;
         if(userInput==computerChoice) cout<<"It's a tie!"<<endl;
-        else if(userInput=="rock" && computerChoice=="scissors") cout<<"You win!"<<endl;
-        else if(userInput=="paper" && computerChoice=="rock") cout<<"You win!"<<endl;
-        else if(userInput=="scissors" && computerChoice=="paper") cout<<"You win!"<<endl;
-        else cout<<"You lose!"<<endl;
+        else if(userInput=="rock" && computerChoice=="scissors")
+        {
+            cout<<"You win!"<<endl; 
+            playerScore++;
+        } 
+        else if(userInput=="paper" && computerChoice=="rock")
+        {
+            cout<<"You win!"<<endl; 
+            playerScore++;
+        }
+        else if(userInput=="scissors" && computerChoice=="paper")
+        {
+            cout<<"You win!"<<endl; 
+            playerScore++;
+        }
+        else
+        {
+            cout<<"You lose!"<<endl; 
+            computerScore++;
+        }
         cout<<"Score: Player "<<playerScore<<" Computer "<<computerScore<<endl;
         if(playerScore+computerScore==5) done=true;
 
